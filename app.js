@@ -32,7 +32,7 @@ function renderUserInfo(userData){
     
     let formattedDate = new Date(userData.created_at);
     formattedDate = formattedDate.toLocaleDateString('en-GB', {
-        day: '2-digit', month: 'long', year: 'numeric'
+        day: '2-digit', month: 'short', year: 'numeric'
     });
     joinedDate.textContent = `Joined ${formattedDate}`;
 

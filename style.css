@@ -1,18 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+:root {
+    --lm-bg: #f6f8ff;
+    --lm-bg-content: #fefefe;
+    --lm-text: #4b6a9b;
+    --lm-text-alt: #2b3442;
+    --lm-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.2);
+    --lm-shadow-inactive: 0px 16px 30px -10px rgba(0, 0, 0, 0.2);
+    --lm-icon-bg: brightness(100%);
+    /* Btn */
+    --btn: #0079ff;
+    --btn-hover: #60abff;
+}
+
 html, body {
     width: 100%;
     height: 100%;
+    font-family: 'Space Mono', monospace;
+    color: var(--lm-text);
 }
 
 #wrapper{
     width: 100%;
     height: 100%;
-    background-color: #F6F8FF;
+    background-color: var(--lm-bg);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,12 +38,197 @@ html, body {
 header{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 700px;
-    padding-inline: 30px;
+    margin-bottom: 20px;
+}
+
+header>div:first-child{
+    font-size: 1.65rem;
+    font-weight: 700;
+}
+
+header .dark-mode-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    gap: 15px;
+    opacity: 0.85;
+}
+
+.dark-mode-btn span{
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.dark-mode{
+    font-size: 1.6rem;
+}
+
+.light-mode{
+    display: none;
 }
 
 .main-container{
-    border: 2px solid red;
-    width: 700px;
+    width: 750px;
     min-height: 570px;
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* search form */
+
+.search-container{
+    position: relative;
+    width: 100%;
+}
+
+.fa-magnifying-glass{
+    position: absolute;
+    color: #60ABFF;
+    top: 52%;
+    transform: translateY(-50%);
+    left: 20px;
+    font-size: 1.3rem;
+}
+
+[data-searchInput]{
+    all: unset;
+    box-sizing: border-box;
+    color: var(--lm-text);
+    font-size: 1.3rem;
+    width: 100%;
+    padding: 22px 365px 22px 55px;
+    background-color: white;
+    box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.2);
+    border-radius: 10px;
+}
+
+[data-searchInput]::placeholder{
+    font-size: 1.15rem;
+    color: #4B6A9B;
+}
+
+
+[data-searchBtn]{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 13px;
+    right: 0;
+    background-color: var(--btn);
+    padding: 13px 20px;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border: none;
+}
+
+[data-searchBtn]:hover{
+    background-color: var(--btn-hover);
+    cursor: pointer;
+}
+
+
+/* profile container */
+
+.profile-container{
+    background-color: white;
+    box-shadow: var(--lm-shadow);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 50px;
+    padding: 50px 20px;
+}
+
+.profile-container img{
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.profile-container .user-details{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.profile-info-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.name h3{
+    font-size: 1.6rem;
+    color: #222222e4;
+}
+
+.name a{
+    appearance: none;
+    color: var(--btn);
+}
+
+.date{
+    margin-top: 6px;
+}
+
+.user-bio{
+    font-size: 15px;
+    line-height: 25px;
+    opacity: 0.7;
+}
+
+
+.profile-stats-wrapper{
+    display: flex;
+    justify-content: flex-start;
+    gap: 75px;
+    background-color: var(--lm-bg);
+    padding: 20px 20px 20px 30px;
+    border-radius: 10px;
+    margin-block: 20px;
+}
+
+.profile-stats-wrapper div{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.profile-stats-wrapper div p{
+    font-size: 13px;
+    opacity: 0.9;
+}
+
+.profile-stats-wrapper div h3{
+    color: black;
+    font-size: 1.4rem;
+}
+
+.profile-bottom-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row: 1fr 1fr;
+    gap: 20px;
+    text-align: center;
+}
+
+.bottom-box{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.bottom-box a{
+    color: var(--lm-text);
 }
