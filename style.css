@@ -118,7 +118,7 @@ header .mode-btn{
     display: block;
 }
 
-.error{
+.error-msg{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -128,7 +128,7 @@ header .mode-btn{
     display: none;
 }
 
-.error.active{
+.error-msg.active{
     display: block;
 }
 

@@ -2,6 +2,7 @@ const get = (value) => document.querySelector(value);
 const searchInput = get("[data-searchInput]");
 const searchBtn = get("[data-searchBtn]");
 const crossIcon = get(".cross-icon");
+const errorMsg = get(".error-msg");
 
 const userImg = get("[data-user-img]");
 const userName = get("[data-user-name]");
@@ -34,17 +35,18 @@ async function fetchUserInfo(userName) {
         if (!(userData.login))
             throw userData
 
-        console.log(userData);
         renderUserInfo(userData);
     }
     catch (error) {
-        console.log(error,error.message);
+        if(error.message === "Not Found")
+            errorMsg.classList.add("active");
     }
 
 }
 
 function renderUserInfo(userData) {
 
+    errorMsg.classList.remove("active");
     function checkNull(param1, param2) {
 
         if (param1 === "" || param1 === null) {
@@ -156,13 +158,16 @@ searchInput.addEventListener("input",()=>{
 
     if(searchInput.value)
         crossIcon.classList.add("active");
-    else
+    else{
         crossIcon.classList.remove("active");
+        errorMsg.classList.remove("active");
+    }
 })
 
 crossIcon.addEventListener("click",()=>{
 
     crossIcon.classList.remove("active");
+    errorMsg.classList.remove("active");
     searchInput.value = "";
 })
 
