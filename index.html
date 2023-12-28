@@ -15,11 +15,11 @@
       <header>
         <div>DevDetective</div>
 
-        <div class="dark-mode-btn">
-          <span>DARK</span>
+        <div class="mode-btn">
+          <span class="mode-text">DARK</span>
 
           <!-- for dark mode -->
-          <i type="bx-7328" class="cIcon cIcon-bx-7328 dark-mode" title="custicon">
+          <i type="bx-7328" class="cIcon cIcon-bx-7328 dark-mode-icon" title="custicon">
             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentcolor" viewBox="0 0 1024 1024">
               <path
                 d="M512 503.8A384.1 384.1 0 0 1 428.8 85.3a424.2 424.2 0 0 0-218.5 116.7c-166.6 166.6-166.6 436.8 0 603.4 166.7 166.7 436.8 166.6 603.4 0a424.4 424.4 0 0 0 116.7-218.4A384.1 384.1 0 0 1 512 503.8z">
@@ -28,7 +28,7 @@
           </i>
 
           <!-- for light mode-->
-          <i type="cool-10007" class="cIcon cIcon-cool-10007 light-mode" title="custicon">
+          <i type="cool-10007" class="cIcon cIcon-cool-10007 light-mode-icon" title="custicon">
             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentcolor" viewBox="0 0 1024 1024">
               <path
                 d="M554.6 938.7H469.2V810.7H554.6V938.7ZM783.4 843.9L692.9 753.4 753.3 693 843.8 783.6 783.5 843.9H783.4ZM240.4 843.9L180 783.5 270.5 693 330.8 753.3 240.4 843.8V843.9ZM511.9 725.6C393.9 725.6 298.3 629.9 298.4 511.9 298.4 394 394.1 298.4 512 298.4 630 298.4 725.6 394 725.6 512 725.5 630 629.9 725.6 511.9 725.6ZM511.9 383.7C441.1 383.7 383.7 441.2 383.7 512.1 383.7 582.9 441.2 640.3 512 640.3 582.9 640.3 640.3 582.8 640.3 512 640.2 441.1 582.8 383.7 511.9 383.7ZM938.6 554.7H810.6V469.3H938.6V554.7ZM213.3 554.7H85.3V469.3H213.3V554.7ZM753.2 331L692.9 270.6 783.4 180.1 843.8 240.5 753.3 331 753.2 331ZM270.6 331L180.1 240.5 240.5 180.2 330.9 270.7 270.6 331 270.6 331ZM554.6 213.3H469.2V85.3H554.6V213.3Z">
@@ -47,6 +47,10 @@
               <input data-searchInput type="text" placeholder="Enter a Github username...">
               <button data-searchBtn type="submit">Search</button>
 
+              <div class="cross-icon">
+                <i class="fa-regular fa-circle-xmark"></i>
+              </div>
+              <div class="error">No results found</div> 
           </form>
 
           <!-- github user details -->
@@ -63,7 +67,7 @@
                         <div class="name">
 
                             <h3 data-user-name>Suraj Mandal</h3>
-                            <a data-user-id href="https://github.com/rjsuraj">@rjsuraj</a>
+                            <a target="_blank" data-user-id href="https://github.com/rjsuraj">@rjsuraj</a>
 
                         </div>
 
@@ -104,12 +108,12 @@
 
                         <div class="bottom-box">
                             <i class="fa-solid fa-link"></i>
-                            <a data-blog href="">Not Available</a>
+                            <a target="_blank" data-blog href="">Not Available</a>
                         </div>
 
                         <div class="bottom-box">
                             <i class="fa-brands fa-twitter"></i>
-                            <a data-twitter href="">rjsurajmandal</a>
+                            <a target="_blank" data-twitter href="">rjsurajmandal</a>
                         </div>
 
                         <div class="bottom-box">

@@ -12,7 +12,6 @@
     --lm-text-alt: #2b3442;
     --lm-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.2);
     --lm-shadow-inactive: 0px 16px 30px -10px rgba(0, 0, 0, 0.2);
-    --lm-icon-bg: brightness(100%);
     /* Btn */
     --btn: #0079ff;
     --btn-hover: #60abff;
@@ -48,7 +47,7 @@ header>div:first-child{
     font-weight: 700;
 }
 
-header .dark-mode-btn{
+header .mode-btn{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -57,18 +56,28 @@ header .dark-mode-btn{
     opacity: 0.85;
 }
 
-.dark-mode-btn span{
+.mode-btn span{
     font-size: 0.9rem;
     font-weight: 700;
     letter-spacing: 1px;
 }
 
-.dark-mode{
+.dark-mode-icon{
     font-size: 1.6rem;
+    display: none;
 }
 
-.light-mode{
+.dark-mode-icon.active{
+    display: block;
+}
+
+.light-mode-icon{
+    font-size: 1.6rem;
     display: none;
+}
+
+.light-mode-icon.active{
+    display: block;
 }
 
 .main-container{
@@ -89,11 +98,38 @@ header .dark-mode-btn{
 
 .fa-magnifying-glass{
     position: absolute;
-    color: #60ABFF;
+    color: var(--btn);
     top: 52%;
     transform: translateY(-50%);
     left: 20px;
     font-size: 1.3rem;
+}
+
+.cross-icon{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 50%;
+    font-size: 20px;
+    display: none;
+}
+
+.cross-icon.active{
+    display: block;
+}
+
+.error{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 55%;
+    font-size: 20px;
+    color: red;
+    display: none;
+}
+
+.error.active{
+    display: block;
 }
 
 [data-searchInput]{
@@ -103,14 +139,14 @@ header .dark-mode-btn{
     font-size: 1.3rem;
     width: 100%;
     padding: 22px 365px 22px 55px;
-    background-color: white;
+    background-color: var(--lm-bg-content);
     box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.2);
     border-radius: 10px;
 }
 
 [data-searchInput]::placeholder{
     font-size: 1.15rem;
-    color: #4B6A9B;
+    color: var(--lm-text);
 }
 
 
@@ -138,7 +174,7 @@ header .dark-mode-btn{
 /* profile container */
 
 .profile-container{
-    background-color: white;
+    background-color: var(--lm-bg-content);
     box-shadow: var(--lm-shadow);
     border-radius: 10px;
     display: flex;
@@ -170,7 +206,7 @@ header .dark-mode-btn{
 
 .name h3{
     font-size: 1.6rem;
-    color: #222222e4;
+    color: var(--lm-text-alt);
 }
 
 .name a{
@@ -211,7 +247,7 @@ header .dark-mode-btn{
 }
 
 .profile-stats-wrapper div h3{
-    color: black;
+    color: var(--lm-text-alt);
     font-size: 1.4rem;
 }
 
@@ -229,6 +265,11 @@ header .dark-mode-btn{
     gap: 10px;
 }
 
+.bottom-box span{
+    word-break: break-all;
+}
+
 .bottom-box a{
     color: var(--lm-text);
+    word-break: break-all;
 }
